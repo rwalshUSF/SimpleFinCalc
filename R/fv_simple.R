@@ -22,6 +22,8 @@
 #'
 #' fv_simple(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
 #'
+#' fv_simple(profiles1$Principal[2],profiles1$Rate[2],profiles1$Years[2])
+#'
 fv_simple <- function(principal, rate, years) {
   # Input validation
   if (!is.numeric(principal) || any(is.na(principal)) || length(principal) != 1 || any(principal <= 0)) {

@@ -32,4 +32,6 @@ fv_simple(testP,testR,testY)
 
 fv_simple(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
 
+fv_simple(profiles1$Principal[2],profiles1$Rate[2],profiles1$Years[2])
+
 }

@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of SimpleFinCalc is to ...
+The goal of SimpleFinCalc is to provide a straightforward suite of functions for performing common financial calculations, making it an excellent educational tool or quick-reference utility. It includes core functions for analyzing the time value of money, such as computing future and present values, as well as calculating net present value and loan payments. The package also features a function for generating a full amortization schedule, allowing users to easily break down loan payments into principal and interest over time. By encapsulating complex financial formulas into easy-to-use functions, SimpleFinCalc helps users perform essential financial analyses without the need for manual calculations, streamlining tasks for students, analysts, or anyone interested in personal finance.
 
 ## Installation
 
@@ -35,21 +35,13 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(SimpleFinCalc)
-## basic example code
+data("profiles1")
+# Using built in 'profiles1' data set to calculate simple future value:
+fv_simple(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+Here is a summary of the variables in the built-in 'profiles1' data set:
 
-```{r cars}
-summary(cars)
+```{r profiles1}
+summary(profiles1)
 ```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
