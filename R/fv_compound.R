@@ -46,10 +46,13 @@ fv_compound <- function(principal, rate, years, n_comp) {
 
   # Calculation
 
+  # Ensure rate is in decimal form
+  if (rate > 1) {
+    rate <- rate / 100
+  }
+
   # The future value formula: FV = P * (1 + r/n)^(n*t)
   future_value <- principal * (1 + rate / n_comp)^(n_comp * years)
-
-  format(future_value, scientific = FALSE)
 
   return(future_value)
 }
