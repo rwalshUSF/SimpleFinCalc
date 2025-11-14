@@ -144,7 +144,7 @@ Fixed Annuity Payment - $payment = P * (r*(1 + r)^n)/((1 + r)^n-1)$
 #
 # This function performs an 'annuity_payment' calculation with robust input validation.
 # It takes three variables; Principal, Rate, and Years; 
-# then returns the calculated value. The regular payment amount.
+# then returns the calculated value. The regular annual payment amount.
 
 # Using user variables:
 testP<-1000
@@ -170,7 +170,7 @@ annuity_payment(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
 
 ### Calculate the fixed monthly payment for a loan.
 
-Monthly Loan Payment - $payment = P * (r*(1 + r)^n)/((1 + r)^n-1)$
+Monthly Loan Payment - $payment = P*(r*(1 + r)^n/((1+r)^n-1)$
 
 ```{r}
 # The 'loan_payment()' function:
@@ -185,7 +185,7 @@ testR<-5
 testY<-10
 loan_payment(testP,testR,testY)
 # Therefore if a person borrows $1000, at an annual Rate of .05%, 
-# for 10 Years; their fixed monthly loan payment is ~$129.5046!
+# for 10 Years; their fixed monthly loan payment is ~$10.60655!
 
 # Using a record from the 'profiles1' data set
 
@@ -193,12 +193,52 @@ loan_payment(testP,testR,testY)
 profiles1[1,]
 
 # Call the function using the 'profiles1[1]' data
-annuity_payment(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
-# Therefore if a person borrows $1000, at an annual Rate of .05%, 
-# for 10 Years; their fixed monthly loan payment is ~$129.5046!
+loan_payment(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
+# Therefore if a person borrows $457488.2, at an annual Rate of 0.1350653%, 
+# for 25 Years; their fixed monthly loan payment is ~$5334.956!
 ```
 
+### Create an amortization schedule data frame for a loan.
 
+The 'amort_schedule' function relies on two core formulas and a sequential process:
+
+Formula for the Fixed Monthly Payment (same as loan payment)
+
+Monthly Loan Payment - $payment = P*(r*(1 + r)^n/((1+r)^n-1)$
+
+Then, Formulas Used Within the Amortization Loop:
+
+The function then iterates through each payment period (month) using a for loop and applies three simple formulas for each row:
+
+Interest Payment: Interest = Beginning_Balance * monthly_rate
+Principal Paid: Principal_Paid = Payment - Interest
+Ending Balance: Ending_Balance = Beginning_Balance - Principal_Paid
+
+```{r}
+# The 'amort_schedule()' function:
+#
+# This function performs 'amort_schedule' calculations with robust input validation.
+# It takes three variables; Principal, Rate, and Years; 
+# then returns A data frame showing the breakdown of each payment.
+
+# Using user variables:
+testP<-1000
+testR<-5
+testY<-10
+sched1<-amort_schedule(testP,testR,testY)
+# The output is limited for space
+head(sched1)
+
+# Using a record from the 'profiles1' data set
+
+# Print the first record in the data set
+profiles1[1,]
+
+# Call the function using the 'profiles1[1]' data
+sched2<-amort_schedule(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
+# The output is limited for space
+head(sched1)
+```
 
 
 
