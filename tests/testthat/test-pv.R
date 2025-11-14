@@ -10,11 +10,11 @@ test_that("pv() errors if future_value != numeric", {
   expect_error(pv("One Thousand",5,10))
 })
 
-test_that("fv_simple() errors if rate != numeric", {
-  expect_error(fv_simple(1000,"Five",10))
+test_that("pv() errors if rate != numeric", {
+  expect_error(pv(1000,"Five",10))
 })
 
-test_that("fv_simple() errors if years != numeric", {
-  expect_error(fv_simple(1000,5,"Ten"))
+test_that("pv() errors if years != numeric", {
+  expect_error(pv(1000,5,"Ten"))
 })
 
