@@ -7,22 +7,29 @@
 fv_simple(principal, rate, years)
 }
 \arguments{
-\item{principal}{Single numeric value}
+\item{principal}{Single numeric value - Must not contain \code{NA} values and all values must be positive.}
 
-\item{rate}{Single numeric percentage}
+\item{rate}{Single numeric percentage - Must not contain \code{NA} values and all values must be positive.}
 
-\item{years}{Single numeric value}
+\item{years}{Single numeric value - Must not contain \code{NA} values and all values must be positive.}
 }
 \value{
-A numeric value
+A numeric value representing the result of the calculation.
 }
 \description{
-Simple Future Value
+This function performs a calculation with robust input validation.
 }
 \examples{
+
+# Using user variables:
+
 testP<-1000
 testR<-5
 testY<-10
 fv_simple(testP,testR,testY)
+
+# Using built in 'profiles1' data set:
+
+fv_simple(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
 
 }
