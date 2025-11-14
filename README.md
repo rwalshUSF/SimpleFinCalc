@@ -32,7 +32,8 @@ pak::pak("rwalshUSF/SimpleFinCalc")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to solve a common financial
+problem (Simple Future Value):
 
 ``` r
 library(SimpleFinCalc)
