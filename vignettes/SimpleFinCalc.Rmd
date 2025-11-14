@@ -290,8 +290,8 @@ Simple Return - $(endprice - startprice) / startprice$
 testSP<-1000
 testEP<-15632
 simple_return(testSP,testEP)
-# Therefore if a person enters an investment worth $1000, and the investment is 
-# now worth $15632 their simple return rate is ~0.3164412!
+# Therefore if a person enters an investment that costs $1000, and the investment is 
+# now worth $15632 their simple return rate is ~14.632!
 
 # Using a record from the 'profiles1' data set
 
@@ -300,6 +300,6 @@ profiles1[1,]
 
 # Call the function using the 'profiles1[1]' data
 simple_return(profiles1$Start_Price[1],profiles1$End_Price[1])
-# Therefore if a person enters an investment worth $1000, and the investment is 
-# now worth $15632 their simple return rate is ~0.3164412!
+# Therefore if a person enters an investment that costs $457488.2, and the investment is 
+# now worth $1039037 their simple return rate is ~1.271178!
 ```
