@@ -210,9 +210,11 @@ Then, Formulas Used Within the Amortization Loop:
 
 The function then iterates through each payment period (month) using a for loop and applies three simple formulas for each row:
 
-Interest Payment: Interest = Beginning_Balance * monthly_rate
-Principal Paid: Principal_Paid = Payment - Interest
-Ending Balance: Ending_Balance = Beginning_Balance - Principal_Paid
+Interest Payment: $Interest = Beginning Balance * monthly rate$
+
+Principal Paid: $Principal Paid = Payment - Interest$
+
+Ending Balance: $Ending Balance = Beginning Balance - Principal Paid$
 
 ```{r}
 # The 'amort_schedule()' function:
@@ -237,7 +239,7 @@ profiles1[1,]
 # Call the function using the 'profiles1[1]' data
 sched2<-amort_schedule(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
 # The output is limited for space
-head(sched1)
+head(sched2)
 ```
 
 
