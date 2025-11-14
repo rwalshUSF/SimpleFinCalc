@@ -16,7 +16,7 @@
 #' testSV<-1000
 #' testEV<-15632
 #' testY<-10
-#' fv_simple(testSV,testEV,testY)
+#' cagr(testSV,testEV,testY)
 #'
 cagr <- function(start_value, end_value, years) {
   # Input validation

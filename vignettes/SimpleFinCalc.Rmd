@@ -248,7 +248,32 @@ head(sched2)
 
 CAGR - $((endvalue / startvalue)^(1 / years)) - 1$
 
+```{r}
+# The 'cagr()' function:
+#
+# This function performs a 'cagr' calculation with robust input validation.
+# It takes three variables; Start_Value, End_Value, and Years; 
+# then returns the calculated value. The Compound Annual Growth Rate (CAGR) 
+# of an investment as a decimal.
 
+# Using user variables:
+testSV<-1000
+testEV<-15632
+testY<-10
+cagr(testSV,testEV,testY)
+# Therefore if a person enters an investment worth $1000, and the investment is 
+# worth $15632 after 10 Years; their CAGR is ~$10.60655!
+
+# Using a record from the 'profiles1' data set
+
+# Print the first record in the data set
+profiles1[1,]
+
+# Call the function using the 'profiles1[1]' data
+cagr(profiles1$Start_Value[1],profiles1$End_Value[1],profiles1$Years[1])
+# Therefore if a person enters an investment worth $1000, and the investment is 
+# worth $15632 after 10 Years; their CAGR is ~$10.60655!
+```
 
 
 
