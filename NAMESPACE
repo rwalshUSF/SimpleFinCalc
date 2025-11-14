@@ -3,4 +3,5 @@
 export(annuity_payment)
 export(fv_compound)
 export(fv_simple)
+export(loan_payment)
 export(pv)
