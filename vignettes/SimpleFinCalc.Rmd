@@ -18,13 +18,13 @@ knitr::opts_chunk$set(
 library(SimpleFinCalc)
 ```
 
+The 'SimpleFinCalc' R package provide a straightforward suite of functions for performing common financial calculations, making it an excellent educational tool or quick-reference utility. It includes core functions for analyzing the time value of money, such as computing future and present values, as well as calculating loan payments. The package also features a function for generating a full amortization schedule, allowing users to easily break down loan payments into principal and interest over time. By encapsulating complex financial formulas into easy-to-use functions, SimpleFinCalc helps users perform essential financial analyses without the need for manual calculations, streamlining tasks for students, analysts, or anyone interested in personal finance.
+
+The 'SimpleFinCalc' R package includes a built in data set 'profiles1' to assist in the testing and demonstration of the many functions that the packages includes. The data set is available when the package is installed and the library is loaded in to the R working environment. The data set can alo be referenced with the data() function.
+
 ### Installation
 
 ```{r}
-# The 'SimpleFinCalc' R package provide a straightforward suite of functions for performing common financial calculations, making it an excellent educational tool or quick-reference utility. It includes core functions for analyzing the time value of money, such as computing future and present values:
-
-# The 'SimpleFinCalc' R package includes a built in data set 'profiles1' to assist in the testing and demonstration of the many functions that the packages includes. The data set is available when the package is installed and the library is loaded in to the R working environment. The data set can alo be referenced with the data() function.
-
 # Install package
 
 # install.packages("pak")
