@@ -262,7 +262,7 @@ testEV<-15632
 testY<-10
 cagr(testSV,testEV,testY)
 # Therefore if a person enters an investment worth $1000, and the investment is 
-# worth $15632 after 10 Years; their CAGR is ~$10.60655!
+# worth $15632 after 10 Years; their CAGR is ~0.3164412!
 
 # Using a record from the 'profiles1' data set
 
@@ -271,9 +271,35 @@ profiles1[1,]
 
 # Call the function using the 'profiles1[1]' data
 cagr(profiles1$Start_Value[1],profiles1$End_Value[1],profiles1$Years[1])
-# Therefore if a person enters an investment worth $1000, and the investment is 
-# worth $15632 after 10 Years; their CAGR is ~$10.60655!
+# Therefore if a person enters an investment worth $457488.2, and the investment is 
+# worth $1039037 after 25 Years; their CAGR is ~0.0333562!
 ```
 
+### Calculate the Simple Return (percentage change) of an investment.
 
+Simple Return - $(endprice - startprice) / startprice$
 
+```{r}
+# The 'simple_return()' function:
+#
+# This function performs a 'simple_return' calculation with robust input validation.
+# It takes two variables; Start_Price and End_Price; 
+# then returns the calculated value. The simple return as a decimal (e.g., 0.10 for 10%).
+
+# Using user variables:
+testSP<-1000
+testEP<-15632
+simple_return(testSP,testEP)
+# Therefore if a person enters an investment worth $1000, and the investment is 
+# now worth $15632 their simple return rate is ~0.3164412!
+
+# Using a record from the 'profiles1' data set
+
+# Print the first record in the data set
+profiles1[1,]
+
+# Call the function using the 'profiles1[1]' data
+simple_return(profiles1$Start_Price[1],profiles1$End_Price[1])
+# Therefore if a person enters an investment worth $1000, and the investment is 
+# now worth $15632 their simple return rate is ~0.3164412!
+```
