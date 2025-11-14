@@ -1,7 +1,7 @@
 #' profiles1 - 100 records for financial calculations:
 #'
 #' synthetic inputs for various loan, investment, and return calculations
-#' for use with the functions implemented in the '{SimpleFinCalc}' package.
+#' for use with the functions implemented in the 'SimpleFinCalc' package.
 #'
 #' @format ## `profiles1`
 #' A data frame with 100 rows and 9 columns:
@@ -16,6 +16,6 @@
 #'   \item{Start_Price}{Initial price of a stock}
 #'   \item{End_Price}{Final price of a stock}
 #' }
-#' @source <https://www.who.int/teams/global-tuberculosis-programme/data>
+#' @source <https://github.com/rwalshUSF/SimpleFinCalc/blob/main/data/profiles1.rda>
 
 "profiles1"

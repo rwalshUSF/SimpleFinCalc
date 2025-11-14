@@ -29,7 +29,6 @@ years_duration <- sample(1:30, 100, replace = TRUE)
 # Number of compounding periods per year (e.g., 1=annually, 4=quarterly, 12=monthly)
 n_compounding <- sample(c(1, 4, 12), 100, replace = TRUE)
 
-
 # Create the data frame with relevant variables
 profiles1 <- data.frame(
   # Inputs for TVM, Loans, Annuity functions
