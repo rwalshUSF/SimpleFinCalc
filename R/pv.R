@@ -2,11 +2,11 @@
 #'
 #' This function performs a calculation with robust input validation.
 #'
-#' @param future_value Single numeric value - Must not contain `NA` values and all values must be positive.
-#' @param rate Single numeric value - Must not contain `NA` values and all values must be positive.
-#' @param years Single numeric value - Must not contain `NA` values and all values must be positive.
+#' @param future_value Single numeric value - The future value amount.
+#' @param rate Single numeric value - The annual discount rate (as a decimal).
+#' @param years Single numeric value - The number of years until the future value is received.
 #'
-#' @returns A numeric value representing the result of the calculation.
+#' @returns A numeric value representing the result of the calculation. The present value.
 #' @export
 #'
 #' @examples

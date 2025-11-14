@@ -14,7 +14,7 @@ fv_simple(principal, rate, years)
 \item{years}{Single numeric value - Must not contain \code{NA} values and all values must be positive.}
 }
 \value{
-A numeric value representing the result of the calculation.
+A numeric value representing the result of the calculation. The future value.
 }
 \description{
 This function performs a calculation with robust input validation.

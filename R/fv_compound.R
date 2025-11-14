@@ -7,7 +7,7 @@
 #' @param years The number of years (numeric, positive integer or decimal).
 #' @param n_comp The number of compounding periods per year (numeric, positive integer).
 #'
-#' @returns The calculated future value (numeric).
+#' @returns The calculated future value (numeric). The future value.
 #' @export
 #'
 #' @examples

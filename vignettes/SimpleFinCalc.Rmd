@@ -38,7 +38,7 @@ The 'SimpleFinCalc' R package includes a built in data set 'profiles1' to assist
 head(profiles1)
 ```
 
-# Examples of the package's functions using user input and 'profiles1' data
+# Examples of the package's functions with user input and 'profiles1' data
 
 ## --- 1. Time Value of Money (TVM) Functions ---
 
@@ -49,15 +49,17 @@ Simple Future Value - $FV = PV * (1 + r)^n$
 ```{r}
 # The 'fv_simple()' function:
 #
-# This function performs a 'Simple Future Value' calculation with robust input validation.
-# It takes three variables; Principal, Rate, and Years, and returns the calculated value.
+# This function performs a 'Simple Future Value' calculation with robust input 
+# validation. It takes three variables; Principal, Rate, and Years, and returns 
+# the calculated value.
 
 # Using user variables:
 testP<-1000
 testR<-5
 testY<-10
 fv_simple(testP,testR,testY)
-# Therefore if a person had a Principal of $1000, at a Rate of .05% for 10 Years they would have ~$1628.895 in the future!
+# Therefore if a person had a Principal of $1000, at a Rate of .05% for 10 Years 
+# they would have ~$1628.895 in the future!
 
 # Using a record from the 'profiles1' data set
 
@@ -66,7 +68,8 @@ profiles1[1,]
 
 # Call the function using the 'profiles1[1]' data
 fv_simple(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
-# Therefore if a person had a Principal of $457488.2, at a Rate of 0.13506535% for 25 Years they would have ~$10861782.00 in the future!
+# Therefore if a person had a Principal of $457488.2, at a Rate of 0.13506535% 
+# for 25 Years they would have ~$10861782.00 in the future!
 ```
 
 ### Calculate the Future Value (FV) of a lump-sum investment (compound interest).
@@ -76,8 +79,9 @@ Compound Future Value - $FV = P * (1 + r/n)^(n*t)$
 ```{r}
 # The 'fv_compound()' function:
 #
-# This function performs a 'Compound Future Value' calculation with robust input validation.
-# It takes four variables; Principal, Rate, Years, and N_Compounds; then returns the calculated value.
+# This function performs a 'Compound Future Value' calculation with robust input 
+# validation. It takes four variables; Principal, Rate, Years, and N_Compounds; 
+# then returns the calculated value.
 
 # Using user variables:
 testP<-1000
@@ -85,7 +89,8 @@ testR<-5
 testY<-10
 testN<-4
 fv_compound(testP,testR,testY,testN)
-# Therefore if a person had a Principal of $1000, at a Rate of .05% for 10 Years, that compounds 4 times a year; they would have ~$1643.619 in the future!
+# Therefore if a person had a Principal of $1000, at a Rate of .05% for 10 Years, 
+# that compounds 4 times a year; they would have ~$1643.619 in the future!
 
 # Using a record from the 'profiles1' data set
 
@@ -94,7 +99,8 @@ profiles1[1,]
 
 # Call the function using the 'profiles1[1]' data
 fv_compound(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1],profiles1$N_Compounding[1])
-# Therefore if a person had a Principal of $1000, at a Rate of .05% for 10 Years, that compounds 4 times a year; they would have ~$10861782.00 in the future!
+# Therefore if a person had a Principal of $1000, at a Rate of .05% for 10 Years, 
+# that compounds 4 times a year; they would have ~$10861782.00 in the future!
 ```
 
 ### Calculate the Present Value (PV) of a future sum of money.
@@ -105,14 +111,17 @@ Present Value - $PV = FV / (1 + r)^n$
 # The 'pv()' function:
 #
 # This function performs a 'Present Value' calculation with robust input validation.
-# It takes three variables; Future_Value_Input, Rate, and Years; then returns the calculated value.
+# It takes three variables; Future_Value_Input, Rate, and Years; 
+# then returns the calculated value.
 
 # Using user variables:
 testF<-10000
 testR<-5
 testY<-10
 pv(testF,testR,testY)
-# Therefore if a person will have $10000 in the future, at an annual discount Rate of .05%, receiving the money 10 Years from now; their money is worth ~$1643.619 in the present!
+# Therefore if a person will have $10000 in the future, at an annual discount 
+# Rate of .05%, receiving the money 10 Years from now; their money is worth 
+# ~$6139.133 in the present!
 
 # Using a record from the 'profiles1' data set
 
@@ -121,5 +130,37 @@ profiles1[1,]
 
 # Call the function using the 'profiles1[1]' data
 pv(profiles1$Future_Value_Input[1],profiles1$Rate[1],profiles1$Years[1])
-# Therefore if a person will have $10000 in the future, at an annual discount Rate of .05%, receiving the money 10 Years from now; their money is worth ~$1643.619 in the present!
+# Therefore if a person will have $1039037 in the future, at an annual discount 
+# Rate of 0.1350653%, receiving the money 25 Years from now; their money is worth 
+# ~$43763.29 in the present!
+```
+
+### Calculate the fixed annuity payment amount for a loan or investment.
+
+Fixed Annuity Payment - $payment = P * (r*(1 + r)^n)/((1 + r)^n-1)$
+
+```{r}
+# The 'annuity_payment()' function:
+#
+# This function performs an 'annuity_payment' calculation with robust input validation.
+# It takes three variables; Principal, Rate, and Years; 
+# then returns the calculated value. The regular payment amount.
+
+# Using user variables:
+testP<-1000
+testR<-5
+testY<-10
+annuity_payment(testF,testR,testY)
+# Therefore if a person will has $1000 in an annuity, at an annual Rate of .05%, 
+# receiving payments for 10 Years; their regular payment is ~$6139.133!
+
+# Using a record from the 'profiles1' data set
+
+# Print the first record in the data set
+profiles1[1,]
+
+# Call the function using the 'profiles1[1]' data
+annuity_payment(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
+# Therefore if a person will has $1000 in an annuity, at an annual Rate of .05%, 
+# receiving payments for 10 Years; their regular payment is ~$6139.133!
 ```

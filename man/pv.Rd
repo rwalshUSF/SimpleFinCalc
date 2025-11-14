@@ -7,14 +7,14 @@
 pv(future_value, rate, years)
 }
 \arguments{
-\item{future_value}{Single numeric value - Must not contain \code{NA} values and all values must be positive.}
+\item{future_value}{Single numeric value - The future value amount.}
 
-\item{rate}{Single numeric value - Must not contain \code{NA} values and all values must be positive.}
+\item{rate}{Single numeric value - The annual discount rate (as a decimal).}
 
-\item{years}{Single numeric value - Must not contain \code{NA} values and all values must be positive.}
+\item{years}{Single numeric value - The number of years until the future value is received.}
 }
 \value{
-A numeric value representing the result of the calculation.
+A numeric value representing the result of the calculation. The present value.
 }
 \description{
 This function performs a calculation with robust input validation.

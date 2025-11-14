@@ -16,7 +16,7 @@ fv_compound(principal, rate, years, n_comp)
 \item{n_comp}{The number of compounding periods per year (numeric, positive integer).}
 }
 \value{
-The calculated future value (numeric).
+The calculated future value (numeric). The future value.
 }
 \description{
 This function performs a calculation with robust input validation.
