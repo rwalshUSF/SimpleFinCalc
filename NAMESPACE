@@ -2,6 +2,7 @@
 
 export(amort_schedule)
 export(annuity_payment)
+export(cagr)
 export(fv_compound)
 export(fv_simple)
 export(loan_payment)

@@ -242,7 +242,11 @@ sched2<-amort_schedule(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[
 head(sched2)
 ```
 
+## --- 3. Return and Growth Calculations ---
 
+### Calculate the Compound Annual Growth Rate (CAGR) of an investment.
+
+CAGR - $((endvalue / startvalue)^(1 / years)) - 1$
 
 
 
