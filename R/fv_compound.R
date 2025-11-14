@@ -40,7 +40,7 @@ fv_compound <- function(principal, rate, years, n_comp) {
   }
 
   # Check that n_comp is a valid compounding frequency (integer > 0)
-  if (n_comp < 1 || !is.integer(n_comp)) {
+  if (n_comp < 1 || !is.numeric(n_comp)) {
     warning("n_comp should be an integer (e.g., 1 for annually, 4 for quarterly, 12 for monthly).")
   }
 
@@ -48,6 +48,8 @@ fv_compound <- function(principal, rate, years, n_comp) {
 
   # The future value formula: FV = P * (1 + r/n)^(n*t)
   future_value <- principal * (1 + rate / n_comp)^(n_comp * years)
+
+  format(future_value, scientific = FALSE)
 
   return(future_value)
 }
