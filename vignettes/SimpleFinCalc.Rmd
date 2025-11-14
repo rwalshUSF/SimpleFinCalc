@@ -1,0 +1,64 @@
+---
+title: "SimpleFinCalc"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{SimpleFinCalc}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(SimpleFinCalc)
+```
+
+### Installation
+<hr>
+
+```{r}
+# The 'SimpleFinCalc' R package provide a straightforward suite of functions for performing common financial calculations, making it an excellent educational tool or quick-reference utility. It includes core functions for analyzing the time value of money, such as computing future and present values:
+
+# The 'SimpleFinCalc' R package includes a built in data set 'profiles1' to assist in the testing and demonstration of the many functions that the packages includes. The data set is available when the package is installed and the library is loaded in to the R working environment. The data set can alo be referenced with the data() function.
+
+# Install package
+
+# install.packages("pak")
+# pak::pak("rwalshUSF/SimpleFinCalc")
+
+# Load Library
+# library(SimpleFinCalc)
+
+# Inspect Data Set 'profiles1'
+# data("profiles1")
+```
+
+### Examples of the package's functions using user input and 'profiles1' data
+<hr>
+
+```{r}
+# The 'fv_simple()' function:
+#
+# This function performs a 'Simple Future Value' calculation with robust input validation.
+# It takes three variables; Principal, Rate, and Years, and returns the calculated value.
+
+# Using user variables:
+testP<-1000
+testR<-5
+testY<-10
+fv_simple(testP,testR,testY)
+
+# Using a record from the 'profiles1' data set
+
+# Print the first record in the data set
+profiles1[1,]
+
+# Call the function using the 'profiles1[1]' data
+fv_simple(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
+```
+
