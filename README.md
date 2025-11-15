@@ -20,6 +20,8 @@ essential financial analyses without the need for manual calculations,
 streamlining tasks for students, analysts, or anyone interested in
 personal finance.
 
+## Vignette
+
 ## Installation
 
 You can install the development version of SimpleFinCalc from
