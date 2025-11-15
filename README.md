@@ -22,7 +22,8 @@ personal finance.
 
 ## Vignette
 
-<https://raw.githubusercontent.com/rwalshUSF/SimpleFinCalc/refs/heads/main/vignettes/SimpleFinCalc.html>
+<a href="vignettes/SimpleFinCalc.html" class="uri"
+style="target">vignettes/SimpleFinCalc.html</a>
 
 ## Installation
 

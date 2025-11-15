@@ -23,7 +23,7 @@ The goal of SimpleFinCalc is to provide a straightforward suite of functions for
 
 ## Vignette
 
-<https://raw.githubusercontent.com/rwalshUSF/SimpleFinCalc/refs/heads/main/vignettes/SimpleFinCalc.html>
+[vignettes/SimpleFinCalc.html](vignettes/SimpleFinCalc.html){.uri style="target"}
 
 ## Installation
 
