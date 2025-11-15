@@ -22,9 +22,6 @@ personal finance.
 
 ## Vignette
 
-<a href="vignettes/SimpleFinCalc.html" class="uri"
-style="target">vignettes/SimpleFinCalc.html</a>
-
 ## Installation
 
 You can install the development version of SimpleFinCalc from
