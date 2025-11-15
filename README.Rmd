@@ -23,6 +23,8 @@ The goal of SimpleFinCalc is to provide a straightforward suite of functions for
 
 ## Vignette
 
+<https://raw.githubusercontent.com/rwalshUSF/SimpleFinCalc/refs/heads/main/vignettes/SimpleFinCalc.html>
+
 ## Installation
 
 You can install the development version of SimpleFinCalc from [GitHub](https://github.com/) with:

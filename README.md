@@ -22,6 +22,8 @@ personal finance.
 
 ## Vignette
 
+<https://raw.githubusercontent.com/rwalshUSF/SimpleFinCalc/refs/heads/main/vignettes/SimpleFinCalc.html>
+
 ## Installation
 
 You can install the development version of SimpleFinCalc from
