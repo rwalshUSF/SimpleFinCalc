@@ -24,18 +24,28 @@ The 'SimpleFinCalc' R package includes a built in data set 'profiles1' to assist
 
 # Installation
 
-```{r}
-# Install package
+You can install the development version of 'SimpleFinCalc' from [GitHub](https://github.com/rwalshUSF/SimpleFinCalc) with:
 
+``` r
 # install.packages("pak")
-# pak::pak("rwalshUSF/SimpleFinCalc")
+pak::pak("rwalshUSF/SimpleFinCalc")
+```
 
+```{r}
 # Load Library
 # library(SimpleFinCalc)
+```
 
+```{r}
 # Inspect Data Set 'profiles1'
 # data("profiles1")
 head(profiles1)
+```
+
+Here is a summary of the variables in the built-in 'profiles1' data set:
+
+```{r profiles1}
+summary(profiles1)
 ```
 
 # Examples of the package's functions with user input and 'profiles1' data

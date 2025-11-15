@@ -25,32 +25,3 @@ The goal of SimpleFinCalc is to provide a straightforward suite of functions for
 ```{r child-chunk, child = "vignettes/SimpleFinCalc.Rmd"}
 
 ```
-
-
-## Installation
-
-You can install the development version of SimpleFinCalc from [GitHub](https://github.com/) with:
-
-``` r
-# install.packages("pak")
-pak::pak("rwalshUSF/SimpleFinCalc")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common financial problem (Simple Future Value):
-
-```{r example}
-library(SimpleFinCalc)
-data("profiles1")
-# Using built in 'profiles1' data set to calculate simple future value:
-fv_simple(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
-```
-
-The 'SimpleFinCalc' R package includes a built in data set 'profiles1' to assist in the testing and demonstration of the many functions that the packages includes. The data set is available when the package is installed and the library is loaded in to the R working environment. The data set can alo be referenced with the data() function.
-
-Here is a summary of the variables in the built-in 'profiles1' data set:
-
-```{r profiles1}
-summary(profiles1)
-```
