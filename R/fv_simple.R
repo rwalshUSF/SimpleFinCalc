@@ -2,16 +2,20 @@
 #'
 #' This function performs a calculation with robust input validation.
 #'
-#' @param principal Single numeric value - Must not contain `NA` values and all values must be positive.
-#' @param rate Single numeric percentage - Must not contain `NA` values and all values must be positive.
-#' @param years Single numeric value - Must not contain `NA` values and all values must be positive.
+#' @param principal Single numeric value - The initial principal amount (numeric, positive).
+#' @param rate Single numeric percentage - The annual interest rate (numeric, positive, as a decimal).
+#' @param years Single numeric value - The number of years (numeric, positive integer or decimal).
 #'
 #' @returns A numeric value representing the result of the calculation. The future value.
 #' @export
 #'
 #' @examples
 #'
-#' # Using user variables:
+#' # With user provided variables:
+#'
+#' # Rate can be entered as a whole number (conversion handled by check in function)
+#' # or as a decimal. The function will determine the rate to be a percentage
+#' # between 0 and 1
 #'
 #' testP<-1000
 #' testR<-5

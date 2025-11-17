@@ -1,4 +1,4 @@
-#' profiles1 - 100 records for financial calculations:
+#' Data Set: 'profiles1' - 100 records for financial calculations:
 #'
 #' synthetic inputs for various loan, investment, and return calculations
 #' for use with the functions implemented in the 'SimpleFinCalc' package.

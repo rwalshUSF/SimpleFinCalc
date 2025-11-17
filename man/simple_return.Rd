@@ -19,6 +19,8 @@ This function performs a calculation with robust input validation.
 }
 \examples{
 
+# With user provided variables:
+
 testSP<-1000
 testEP<-15632
 simple_return(testSP,testEP)

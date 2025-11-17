@@ -23,7 +23,11 @@ This function performs a calculation with robust input validation.
 }
 \examples{
 
-# Using user variables:
+# With user provided variables:
+
+# Rate can be entered as a whole number (conversion handled by check in function)
+# or as a decimal. The function will determine the rate to be a percentage
+# between 0 and 1
 
 testP<-1000
 testR<-5

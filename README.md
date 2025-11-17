@@ -23,11 +23,37 @@ analysts, or anyone interested in personal finance.
 ## Installation
 
 You can install the development version of SimpleFinCalc from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/rwalshUSF/SimpleFinCalc) with:
 
 ``` r
-# install.packages("pak")
-pak::pak("rwalshUSF/SimpleFinCalc")
+# install_github("rwalshUSF/SimpleFinCalc",build_vignettes = TRUE)
+```
+
+Once the installation is complete, try these Rstudio help commands to
+access documentation:
+
+``` r
+# Ensure the package is loaded
+# library(SimpleFinCalc)
+
+# To access the Documentation for the package
+# help(package = "SimpleFinCalc")
+
+# To view the package Vignette
+# vignette("SimpleFinCalc", package = "SimpleFinCalc")
+
+# To view the help file for the 'profiles1' data set
+# ?profiles1
+
+# To view the help files for the individual functions
+# ?fv_simple
+# ?fv_compound
+# ?pv
+# ?annuity_payment
+# ?loan_payment
+# ?amort_schedule
+# ?cagr
+# ?simple_return
 ```
 
 ## Data
