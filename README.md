@@ -7,10 +7,6 @@
 
 <!-- badges: end -->
 
-``` r
-library(SimpleFinCalc)
-```
-
 The ‘SimpleFinCalc’ R package provides a straightforward suite of
 functions for performing common financial calculations, making it an
 excellent educational tool or quick-reference utility. It includes core
@@ -30,44 +26,22 @@ the packages includes. The data set is available when the package is
 installed and the library is loaded in to the R working environment. The
 data set can alo be referenced with the data() function.
 
-# Installation
+## Installation
 
-You can install the development version of ‘SimpleFinCalc’ from
-[GitHub](https://github.com/rwalshUSF/SimpleFinCalc) with:
+You can install the development version of SimpleFinCalc from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
 pak::pak("rwalshUSF/SimpleFinCalc")
 ```
 
-``` r
-# Load Library
-# library(SimpleFinCalc)
-```
-
-``` r
-# Inspect Data Set 'profiles1'
-# data("profiles1")
-head(profiles1)
-#>   Principal       Rate Years N_Compounding Future_Value_Input Start_Value
-#> 1  457488.2 0.13506530    25             1          1039037.4    457488.2
-#> 2  468600.6 0.08722444    16             4           690463.1    468600.6
-#> 3  143783.6 0.13075103    22             1           211693.5    143783.6
-#> 4  415393.4 0.07756351    24            12           751215.1    415393.4
-#> 5  321231.0 0.04052441     1             4           927647.3    321231.0
-#> 6  260028.9 0.07750220    29             1           761126.8    260028.9
-#>   End_Value Start_Price End_Price
-#> 1 1039037.4    457488.2 1039037.4
-#> 2  690463.1    468600.6  690463.1
-#> 3  211693.5    143783.6  211693.5
-#> 4  751215.1    415393.4  751215.1
-#> 5  927647.3    321231.0  927647.3
-#> 6  761126.8    260028.9  761126.8
-```
+# Data
 
 Here is a summary of the variables in the built-in ‘profiles1’ data set:
 
 ``` r
+library(SimpleFinCalc)
 summary(profiles1)
 #>    Principal           Rate             Years       N_Compounding  
 #>  Min.   :  1119   Min.   :0.02228   Min.   : 1.00   Min.   : 1.00  
@@ -101,6 +75,7 @@ summary(profiles1)
 Simple Future Value - $FV = PV * (1 + r)^n$
 
 ``` r
+library(SimpleFinCalc)
 # The 'fv_simple()' function:
 #
 # This function performs a 'Simple Future Value' calculation with robust input 
@@ -130,292 +105,4 @@ fv_simple(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
 #> [1] 10861782
 # Therefore if a person had a Principal of $457488.2, at a Rate of 0.13506535% 
 # for 25 Years they would have ~$10861782.00 in the future!
-```
-
-### Calculate the Future Value (FV) of a lump-sum investment (compound interest).
-
-Compound Future Value - $FV = P * (1 + r/n)^(n*t)$
-
-``` r
-# The 'fv_compound()' function:
-#
-# This function performs a 'Compound Future Value' calculation with robust input 
-# validation. It takes four variables; Principal, Rate, Years, and N_Compounds; 
-# then returns the calculated value.
-
-# Using user variables:
-testP<-1000
-testR<-5
-testY<-10
-testN<-4
-fv_compound(testP,testR,testY,testN)
-#> [1] 1643.619
-# Therefore if a person had a Principal of $1000, at a Rate of .05% for 10 Years, 
-# that compounds 4 times a year; they would have ~$1643.619 in the future!
-
-# Using a record from the 'profiles1' data set
-
-# Print the first record in the data set
-profiles1[1,]
-#>   Principal      Rate Years N_Compounding Future_Value_Input Start_Value
-#> 1  457488.2 0.1350653    25             1            1039037    457488.2
-#>   End_Value Start_Price End_Price
-#> 1   1039037    457488.2   1039037
-
-# Call the function using the 'profiles1[1]' data
-fv_compound(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1],profiles1$N_Compounding[1])
-#> [1] 10861782
-# Therefore if a person had a Principal of $457488.2, at a Rate of 0.1350653% for 
-# 25 Years, that compounds once a year; they would have ~$10861782.00 in the future!
-```
-
-### Calculate the Present Value (PV) of a future sum of money.
-
-Present Value - $PV = FV / (1 + r)^n$
-
-``` r
-# The 'pv()' function:
-#
-# This function performs a 'Present Value' calculation with robust input validation.
-# It takes three variables; Future_Value_Input, Rate, and Years; 
-# then returns the calculated value.
-
-# Using user variables:
-testF<-10000
-testR<-5
-testY<-10
-pv(testF,testR,testY)
-#> [1] 6139.133
-# Therefore if a person will have $10000 in the future, at an annual discount 
-# Rate of .05%, receiving the money 10 Years from now; their money is worth 
-# ~$6139.133 in the present!
-
-# Using a record from the 'profiles1' data set
-
-# Print the first record in the data set
-profiles1[1,]
-#>   Principal      Rate Years N_Compounding Future_Value_Input Start_Value
-#> 1  457488.2 0.1350653    25             1            1039037    457488.2
-#>   End_Value Start_Price End_Price
-#> 1   1039037    457488.2   1039037
-
-# Call the function using the 'profiles1[1]' data
-pv(profiles1$Future_Value_Input[1],profiles1$Rate[1],profiles1$Years[1])
-#> [1] 43763.29
-# Therefore if a person will have $1039037 in the future, at an annual discount 
-# Rate of 0.1350653%, receiving the money 25 Years from now; their money is worth 
-# ~$43763.29 in the present!
-```
-
-### Calculate the fixed annuity payment amount for a loan or investment.
-
-Fixed Annuity Payment - $payment = P * (r*(1 + r)^n)/((1 + r)^n-1)$
-
-``` r
-# The 'annuity_payment()' function:
-#
-# This function performs an 'annuity_payment' calculation with robust input validation.
-# It takes three variables; Principal, Rate, and Years; 
-# then returns the calculated value. The regular annual payment amount.
-
-# Using user variables:
-testP<-1000
-testR<-5
-testY<-10
-annuity_payment(testP,testR,testY)
-#> [1] 129.5046
-# Therefore if a person has $1000 in an annuity, at an annual Rate of .05%, 
-# receiving payments for 10 Years; their regular payment is ~$129.5046!
-
-# Using a record from the 'profiles1' data set
-
-# Print the first record in the data set
-profiles1[1,]
-#>   Principal      Rate Years N_Compounding Future_Value_Input Start_Value
-#> 1  457488.2 0.1350653    25             1            1039037    457488.2
-#>   End_Value Start_Price End_Price
-#> 1   1039037    457488.2   1039037
-
-# Call the function using the 'profiles1[1]' data
-annuity_payment(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
-#> [1] 64507.79
-# Therefore if a person has $457488.2 in an annuity, at an annual Rate of 
-# 0.1350653%, receiving payments for 25 Years; their regular payment is 
-# ~$64507.79!
-```
-
-## — 2. Loan and Mortgage Calculation —
-
-### Calculate the fixed monthly payment for a loan.
-
-Monthly Loan Payment - $payment = P*(r*(1 + r)^n/((1+r)^n-1)$
-
-``` r
-# The 'loan_payment()' function:
-#
-# This function performs a 'loan_payment' calculation with robust input validation.
-# It takes three variables; Principal, Rate, and Years; 
-# then returns the calculated value. The fixed monthly payment.
-
-# Using user variables:
-testP<-1000
-testR<-5
-testY<-10
-loan_payment(testP,testR,testY)
-#> [1] 10.60655
-# Therefore if a person borrows $1000, at an annual Rate of .05%, 
-# for 10 Years; their fixed monthly loan payment is ~$10.60655!
-
-# Using a record from the 'profiles1' data set
-
-# Print the first record in the data set
-profiles1[1,]
-#>   Principal      Rate Years N_Compounding Future_Value_Input Start_Value
-#> 1  457488.2 0.1350653    25             1            1039037    457488.2
-#>   End_Value Start_Price End_Price
-#> 1   1039037    457488.2   1039037
-
-# Call the function using the 'profiles1[1]' data
-loan_payment(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
-#> [1] 5334.956
-# Therefore if a person borrows $457488.2, at an annual Rate of 0.1350653%, 
-# for 25 Years; their fixed monthly loan payment is ~$5334.956!
-```
-
-### Create an amortization schedule data frame for a loan.
-
-The ‘amort_schedule’ function relies on two core formulas and a
-sequential process:
-
-Formula for the Fixed Monthly Payment (same as loan payment)
-
-Monthly Loan Payment - $payment = P*(r*(1 + r)^n/((1+r)^n-1)$
-
-Then, Formulas Used Within the Amortization Loop:
-
-The function then iterates through each payment period (month) using a
-for loop and applies three simple formulas for each row:
-
-Interest Payment: $Interest = Beginning Balance * monthly rate$
-
-Principal Paid: $Principal Paid = Payment - Interest$
-
-Ending Balance: $Ending Balance = Beginning Balance - Principal Paid$
-
-``` r
-# The 'amort_schedule()' function:
-#
-# This function performs 'amort_schedule' calculations with robust input validation.
-# It takes three variables; Principal, Rate, and Years; 
-# then returns A data frame showing the breakdown of each payment.
-
-# Using user variables:
-testP<-1000
-testR<-5
-testY<-10
-sched1<-amort_schedule(testP,testR,testY)
-# The output is limited for space
-head(sched1)
-#>   Payment_No Beginning_Balance Payment Interest Principal_Paid Ending_Balance
-#> 1          1           1000.00   10.61     4.17           6.44         993.56
-#> 2          2            993.56   10.61     4.14           6.47         987.09
-#> 3          3            987.09   10.61     4.11           6.49         980.60
-#> 4          4            980.60   10.61     4.09           6.52         974.08
-#> 5          5            974.08   10.61     4.06           6.55         967.53
-#> 6          6            967.53   10.61     4.03           6.58         960.96
-
-# Using a record from the 'profiles1' data set
-
-# Print the first record in the data set
-profiles1[1,]
-#>   Principal      Rate Years N_Compounding Future_Value_Input Start_Value
-#> 1  457488.2 0.1350653    25             1            1039037    457488.2
-#>   End_Value Start_Price End_Price
-#> 1   1039037    457488.2   1039037
-
-# Call the function using the 'profiles1[1]' data
-sched2<-amort_schedule(profiles1$Principal[1],profiles1$Rate[1],profiles1$Years[1])
-# The output is limited for space
-head(sched2)
-#>   Payment_No Beginning_Balance Payment Interest Principal_Paid Ending_Balance
-#> 1          1          457488.2 5334.96  5149.23         185.72       457302.5
-#> 2          2          457302.5 5334.96  5147.14         187.82       457114.7
-#> 3          3          457114.7 5334.96  5145.03         189.93       456924.8
-#> 4          4          456924.8 5334.96  5142.89         192.07       456732.7
-#> 5          5          456732.7 5334.96  5140.73         194.23       456538.5
-#> 6          6          456538.5 5334.96  5138.54         196.41       456342.0
-```
-
-## — 3. Return and Growth Calculations —
-
-### Calculate the Compound Annual Growth Rate (CAGR) of an investment.
-
-$CAGR = ((endvalue / startvalue)^(1 / years)) - 1$
-
-``` r
-# The 'cagr()' function:
-#
-# This function performs a 'cagr' calculation with robust input validation.
-# It takes three variables; Start_Value, End_Value, and Years; 
-# then returns the calculated value. The Compound Annual Growth Rate (CAGR) 
-# of an investment as a decimal.
-
-# Using user variables:
-testSV<-1000
-testEV<-15632
-testY<-10
-cagr(testSV,testEV,testY)
-#> [1] 0.3164412
-# Therefore if a person enters an investment worth $1000, and the investment is 
-# worth $15632 after 10 Years; their CAGR is ~0.3164412!
-
-# Using a record from the 'profiles1' data set
-
-# Print the first record in the data set
-profiles1[1,]
-#>   Principal      Rate Years N_Compounding Future_Value_Input Start_Value
-#> 1  457488.2 0.1350653    25             1            1039037    457488.2
-#>   End_Value Start_Price End_Price
-#> 1   1039037    457488.2   1039037
-
-# Call the function using the 'profiles1[1]' data
-cagr(profiles1$Start_Value[1],profiles1$End_Value[1],profiles1$Years[1])
-#> [1] 0.0333562
-# Therefore if a person enters an investment worth $457488.2, and the investment is 
-# worth $1039037 after 25 Years; their CAGR is ~0.0333562!
-```
-
-### Calculate the Simple Return (percentage change) of an investment.
-
-$Simple Return = (endprice - startprice) / startprice$
-
-``` r
-# The 'simple_return()' function:
-#
-# This function performs a 'simple_return' calculation with robust input validation.
-# It takes two variables; Start_Price and End_Price; 
-# then returns the calculated value. The simple return as a decimal (e.g., 0.10 for 10%).
-
-# Using user variables:
-testSP<-1000
-testEP<-15632
-simple_return(testSP,testEP)
-#> [1] 14.632
-# Therefore if a person enters an investment that costs $1000, and the investment is 
-# now worth $15632 their simple return rate is ~14.632!
-
-# Using a record from the 'profiles1' data set
-
-# Print the first record in the data set
-profiles1[1,]
-#>   Principal      Rate Years N_Compounding Future_Value_Input Start_Value
-#> 1  457488.2 0.1350653    25             1            1039037    457488.2
-#>   End_Value Start_Price End_Price
-#> 1   1039037    457488.2   1039037
-
-# Call the function using the 'profiles1[1]' data
-simple_return(profiles1$Start_Price[1],profiles1$End_Price[1])
-#> [1] 1.271178
-# Therefore if a person enters an investment that costs $457488.2, and the investment is 
-# now worth $1039037 their simple return rate is ~1.271178!
 ```
