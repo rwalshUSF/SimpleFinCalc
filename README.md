@@ -23,9 +23,12 @@ analysts, or anyone interested in personal finance.
 ## Installation
 
 You can install the development version of SimpleFinCalc from
-[GitHub](https://github.com/rwalshUSF/SimpleFinCalc) with:
+[GitHub](https://github.com/rwalshUSF/SimpleFinCalc) with the ‘devtools’
+package in R:
 
 ``` r
+# install.packages("devtools")
+# library(devtools)
 # install_github("rwalshUSF/SimpleFinCalc",build_vignettes = TRUE)
 ```
 

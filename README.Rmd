@@ -22,9 +22,11 @@ The goal of the 'SimpleFinCalc' R package is to provide a straightforward suite 
 
 ## Installation
 
-You can install the development version of SimpleFinCalc from [GitHub](https://github.com/rwalshUSF/SimpleFinCalc) with:
+You can install the development version of SimpleFinCalc from [GitHub](https://github.com/rwalshUSF/SimpleFinCalc) with the 'devtools' package in R:
 
 ``` r
+# install.packages("devtools")
+# library(devtools)
 # install_github("rwalshUSF/SimpleFinCalc",build_vignettes = TRUE)
 ```
 
