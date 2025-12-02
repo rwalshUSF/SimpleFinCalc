@@ -75,6 +75,10 @@ library(SimpleFinCalc)
 summary(profiles1)
 ```
 
+## S3 and S4 classes
+
+Initially, the SimpleFinCalc package uses S3 class objects, such as the data.frame returned by amort_schedule(), for simplicity and ease of implementation. Looking forward, however, I could transition the output of functions like amort_schedule() to declare and create S4 class objects. This change would leverage S4's more formal and rigorous framework with defined slots and data types, allowing for fine-tuning data attributes, enforcing constraints on input values like interest rates and loan terms, and creating more robust, maintainable, and self-documenting code in future releases.
+
 # --- 1. Time Value of Money (TVM) Functions ---
 
 ## fv_simple()
